@@ -41,33 +41,21 @@ public class PlayWorldOfMagic implements CommandLineRunner {
 
 		int spellsUsed = 0;
 		// ______ BASLANGIC _______ Kodunuz buradan baslamali
-		String firstBoss = bossNames[0];
-		float firstBossHp = bossHPs[0];
-		String secondBoss = bossNames[1];
-		float secondBossHp = bossHPs[1];
-		String thirdBoss = bossNames[2];
-		float thirdBossHp = bossHPs[2];
 
 		float SelectedSpell = spellDamageInfo[0];
-		for (int i = 1; i < spellDamageInfo.length; i++) {
+		for (int i = 0; i < spellDamageInfo.length - 1; i++) {
 			if (spellDamageInfo[i] > SelectedSpell) {
 				SelectedSpell = spellDamageInfo[i];
+
 			}
 		}
-		while (true) {
-
-			if (firstBossHp > 0) {
-				firstBossHp = firstBossHp - SelectedSpell;
-
-			} else if (secondBossHp > 0) {
-				secondBossHp = secondBossHp - SelectedSpell;
-
-			} else if (thirdBossHp > 0) {
-				thirdBossHp = thirdBossHp - SelectedSpell;
-				break;
+		float selectedBosshp = bossHPs[0];
+		for (int i = 0; i <= 2; i++) {
+			selectedBosshp = bossHPs[i];
+			while (selectedBosshp > 0) {
+				selectedBosshp = selectedBosshp - SelectedSpell;
+				spellsUsed++;
 			}
-			spellsUsed++;
-
 		}
 
 		// ______ SON _______ Kodunuz burada bitmeli
