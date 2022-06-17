@@ -58,17 +58,15 @@ public class PlayWorldOfMagic implements CommandLineRunner {
 
 			if (firstBossHp > 0) {
 				firstBossHp = firstBossHp - SelectedSpell;
-				spellsUsed++;
+
 			} else if (secondBossHp > 0) {
 				secondBossHp = secondBossHp - SelectedSpell;
-				spellsUsed++;
 
 			} else if (thirdBossHp > 0) {
 				thirdBossHp = thirdBossHp - SelectedSpell;
-				spellsUsed++;
-
 				break;
 			}
+			spellsUsed++;
 
 		}
 
